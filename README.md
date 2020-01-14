@@ -1,5 +1,4 @@
 # ProjetRSEApplication_PI_-q1_gr3
-Collège de Bois-de-Boulogne - Projet intégrateur : Charles-Éric Langlois, Arthur Van Betsbrugge et Katherine Zamudio-Turcotte / groupe 3 - équipe 1
 
 ECLIPSE Project
 Language : Java
@@ -13,6 +12,7 @@ Project Team :
 Arthur Van Betsbrugge
 Charles-Éric Langlois
 Katherine Zamudio-Turcotte
+Team 1, Group 3, Course Number 420-204-RE, Semester of Winter 2018
 
 In this repo :
 - the PDF manual of our Arduino robot and our application
