@@ -15,6 +15,6 @@ Katherine Zamudio-Turcotte\
 Team 1, Group 3, Course Number 420-204-RE, Semester of Winter 2018\
 \
 In this repo :
-- the PDF manual of our Arduino robot and our application\
-- the Eclipse project files of our application\
-- our Java source code\
+- the PDF manual of our Arduino robot and our application
+- the Eclipse project files of our application
+- our Java source code
