@@ -9,10 +9,10 @@ Our project :\
 Build an Arduino robot that communicates with a Java Swing application by bluetooth.\
 \
 Project Team :\
-Arthur Van Betsbrugge\
-Charles-Éric Langlois\
-Katherine Zamudio-Turcotte\
-Team 1, Group 3, Course Number 420-204-RE, Semester of Winter 2018\
+Team 1, Group 3, Course Number 420-204-RE, Semester of Winter 2018
+- Arthur Van Betsbrugge
+- Charles-Éric Langlois
+- Katherine Zamudio-Turcotte
 \
 In this repo :
 - the PDF manual of our Arduino robot and our application
