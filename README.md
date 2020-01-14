@@ -6,7 +6,7 @@ Made as Final Project in the Computer Science and Mathematics Program at Collèg
 2018\
 \
 Our project :\
-Build an Arduino robot that communicates with a Java Swing application by bluetooth.\
+Building an Arduino robot that communicates with a Java desktop application by Bluetooth.\
 \
 Project Team :\
 Team 1, Group 3, Course Number 420-204-RE, Semester of Winter 2018
