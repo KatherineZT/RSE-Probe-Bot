@@ -10,8 +10,8 @@ Building an Arduino robot that communicates with a Java desktop application by B
 \
 Project Team :\
 Team 1, Group 3, Course Number 420-204-RE, Semester of Winter 2018
-- Arthur Van Betsbrugge
-- Charles-Éric Langlois
+- Arthur Van Betsbrugge (https://github.com/ArthurVB1)
+- Charles-Éric Langlois (https://github.com/calsei)
 - Katherine Zamudio-Turcotte
 
 \
