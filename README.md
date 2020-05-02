@@ -19,7 +19,7 @@ In this repo :
 - the PDF manual of our Arduino robot and our application (in French only)
 - the Eclipse project files of our application
 - our Java source code
-\
+
 --------------------------------------------------------------------------------------------------------------
 \
 Projet ECLIPSE\
