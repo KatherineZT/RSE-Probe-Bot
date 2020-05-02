@@ -24,7 +24,7 @@ In this repo :
 \
 Projet ECLIPSE\
 Langage : Java\
-Réalisé comme projet intégrateur final dans le program de Sciences Informatiques et Mathématiques au Collège de Bois-de-Boulogne\
+Réalisé comme projet intégrateur final dans le programme de Sciences Informatiques et Mathématiques au Collège de Bois-de-Boulogne\
 2018\
 \
 Notre projet :\
