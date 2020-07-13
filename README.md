@@ -1,7 +1,6 @@
-# ProjetRSEApplication_PI_-q1_gr3
+# RSE : Probe Robot made with Arduino
 
-ECLIPSE Project\
-Language : Java\
+Environment Probe Robot (RSE)\
 Made as Final Project in the Computer Science and Mathematics Program at Collège de Bois-de-Boulogne\
 2018\
 \
@@ -22,8 +21,7 @@ In this repo :
 
 --------------------------------------------------------------------------------------------------------------
 \
-Projet ECLIPSE\
-Langage : Java\
+Robot Sondeur d'Environnement (RSE)\
 Réalisé comme projet intégrateur final dans le programme de Sciences Informatiques et Mathématiques au Collège de Bois-de-Boulogne\
 2018\
 \
