@@ -119,9 +119,8 @@ public class Vue extends JFrame implements Observer {
 				cadCO.setLocation(20, (int) Math
 						.round(Toolkit.getDefaultToolkit().getScreenSize().getHeight() - (cadCO.getWidth() + 5)));
 				cadGaz.setLocation(
-						(int) Math.round(
-								Toolkit.getDefaultToolkit().getScreenSize().getWidth() - (cadGaz.getWidth() + 20)),
-						(int) Math.round(Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 405));
+						(int) Math.round(Toolkit.getDefaultToolkit().getScreenSize().getWidth() - (cadGaz.getWidth() + 20)),
+						(int) Math.round(Toolkit.getDefaultToolkit().getScreenSize().getHeight() - (cadGaz.getWidth() + 5)));
 
 				JFrame vue = new JFrame();
 				JPanel main = new JPanel();
@@ -256,7 +255,6 @@ public class Vue extends JFrame implements Observer {
 		add(cadHum);
 		add(cadLumAmb);
 		add(cadTemp);
-		add(cadTemp);
 		add(cadCO);
 		add(cadGaz);
 		add(pnlbtn);
@@ -281,12 +279,12 @@ public class Vue extends JFrame implements Observer {
 				(int) Math.round(Toolkit.getDefaultToolkit().getScreenSize().getHeight() - (cadCO.getWidth() + 5)));
 		cadGaz.setLocation(
 				(int) Math.round(Toolkit.getDefaultToolkit().getScreenSize().getWidth() - (cadGaz.getWidth() + 20)),
-				(int) Math.round(Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 405));
+				(int) Math.round(Toolkit.getDefaultToolkit().getScreenSize().getHeight() - (cadGaz.getWidth() + 5)));
 		pnlbtn.setLocation((int) Math.round(Toolkit.getDefaultToolkit().getScreenSize().getWidth() - 404) / 2,
-				(int) Math.round(Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 200));
+				(int) Math.round(Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 243));
 		logo.setLocation(
 				(int) Math.round((Toolkit.getDefaultToolkit().getScreenSize().getWidth() - 202 * logo.getValX()) / 2),
-				(int) Math.round(cadCO.getLocation().getY()));
+				(int) Math.round(cadCO.getLocation().getY() + 40));
 
 		//Ajoute les menus
 		mnuFichier.add(mnuiRelancer);
