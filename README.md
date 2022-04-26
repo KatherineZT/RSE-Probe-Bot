@@ -6,7 +6,7 @@ Team 1, Group 3, Course Number 420-204-RE, Semester of Winter 2018\
 Project goal :\
 Building a robot, with Arduino, that communicates with a Java desktop application by Bluetooth\
 \
-Developers :\
+Developers :
 - Arthur Van Betsbrugge (https://www.linkedin.com/in/arthur-van-betsbrugge/)
 - Charles-Éric Langlois (https://www.linkedin.com/in/charles-%C3%A9ric-langlois-b619a2193/)
 - Katherine Zamudio-Turcotte (https://www.linkedin.com/in/katherine-zamudio-turcotte/)
