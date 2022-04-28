@@ -80,18 +80,18 @@ public class Cadran extends JPanel {
 		//Ajoute le titre du cadran
 		add(lblTitreVal);
 		lblTitreVal.setSize(xTitre, 16);
-		lblTitreVal.setLocation((int) Math.round((this.getHeight() - xTitre) / 2), (int) Math.round(this.getHeight() / 3));
+		lblTitreVal.setLocation((int) Math.round((this.getHeight() - xTitre) / 2), (int) Math.round(this.getHeight() / 3 + 20));
 
 		//Ajoute la valeur en direct du cadran
 		add(lblVal);
 		lblVal.setSize(this.valeur.length() * 40, 60);
 		lblVal.setFont(new Font("Palatino", Font.CENTER_BASELINE, 70));
-		lblVal.setLocation((int) Math.round((this.getHeight() - this.valeur.length() * 40) / 2), (int) Math.round(lblTitreVal.getLocation().getY() + 20));
+		lblVal.setLocation((int) Math.round((this.getHeight() - this.valeur.length() * 40) / 2), (int) Math.round(lblTitreVal.getLocation().getY() + 25));
 
 		//Ajoute l'option "Détails"
 		add(lblDetails);
 		lblDetails.setSize(39, 16);
-		lblDetails.setLocation((int) Math.round((this.getHeight() - lblDetails.getWidth()) / 2), (int) Math.round(this.getHeight() - 40));
+		lblDetails.setLocation((int) Math.round((this.getHeight() - 39) / 2), Math.round(this.getHeight() - 100));
 		lblDetails.addMouseListener(new MouseAdapter() {
 			@Override
 			//Ajoute l'événement (création du graphique)
@@ -119,29 +119,29 @@ public class Cadran extends JPanel {
 		//Ajoute le titre "Max." du premier cadran secondaire
 		add(lblTitreMax);
 		lblTitreMax.setSize(27, 16);
-		lblTitreMax.setLocation(((int) Math.round(this.getHeight() + 14 + (this.getWidth() - this.getHeight() - 14 - lblTitreMax.getWidth()) / 2)), 10);
+		lblTitreMax.setLocation(((int) Math.round(this.getHeight() + 14 + (this.getWidth() - this.getHeight() - 30 - lblTitreMax.getWidth()) / 2)), 55);
 		add(lblMax);
 		lblMax.setSize(lblMax.getText().length() * 17, 60);
 		lblMax.setFont(new Font("Palatino", Font.CENTER_BASELINE, 30));
-		lblMax.setLocation(this.getHeight() + 14 + ((86 - lblMax.getText().length() * 16) / 2), 20);
+		lblMax.setLocation(this.getHeight() + 14 + ((86 - lblMax.getText().length() * 16) / 2), 65);
 
 		//Ajoute le titre "Min." du deuxième cadran secondaire
 		add(lblTitreMin);
 		lblTitreMin.setSize(23, 16);
-		lblTitreMin.setLocation(((int) Math.round(this.getHeight() + 14 + (this.getWidth() - this.getHeight() - 14 - lblTitreMax.getWidth()) / 2)), (int) Math.round((this.getHeight() - 42) / 3 + 31));
+		lblTitreMin.setLocation(((int) Math.round(this.getHeight() + 14 + (this.getWidth() - this.getHeight() - 30 - lblTitreMax.getWidth()) / 2)), (int) Math.round((this.getHeight() - 42) / 3 + 38));
 		add(lblMin);
 		lblMin.setSize(lblMin.getText().length() * 17, 60);
 		lblMin.setFont(new Font("Palatino", Font.CENTER_BASELINE, 30));
-		lblMin.setLocation(this.getHeight() + 14 + ((86 - lblMin.getText().length() * 16) / 2), (int) Math.round((this.getHeight() - 42) / 3 + 41));
+		lblMin.setLocation(this.getHeight() + 14 + ((86 - lblMin.getText().length() * 16) / 2), (int) Math.round((this.getHeight() - 42) / 3 + 48));
 
 		//Ajoute le titre "Moy." du troisième cadran secondaire
 		add(lblTitreMoy);
 		lblTitreMoy.setSize(26, 16);
-		lblTitreMoy.setLocation(((int) Math.round(this.getHeight() + 14 + (this.getWidth() - this.getHeight() - 14 - lblTitreMax.getWidth()) / 2)), (int) Math.round(2 * ((this.getHeight() - 42) / 3) + 52));
+		lblTitreMoy.setLocation(((int) Math.round(this.getHeight() + 14 + (this.getWidth() - this.getHeight() - 30 - lblTitreMax.getWidth()) / 2)), (int) Math.round(2 * ((this.getHeight() - 42) / 3) + 28));
 		add(lblMoy);
 		lblMoy.setSize(lblMoy.getText().length() * 17, 60);
 		lblMoy.setFont(new Font("Palatino", Font.CENTER_BASELINE, 30));
-		lblMoy.setLocation(this.getHeight() + 14 + ((86 - lblMoy.getText().length() * 16) / 2), (int) Math.round((2 * (this.getHeight() - 42) / 3) + 62));
+		lblMoy.setLocation(this.getHeight() + 14 + ((86 - lblMoy.getText().length() * 16) / 2), (int) Math.round((2 * (this.getHeight() - 42) / 3) + 38));
 	}
 
 	/**
@@ -233,9 +233,9 @@ public class Cadran extends JPanel {
 		g.fillOval(0, 0, this.getHeight(), this.getHeight()); //Cadran principal (cercle extérieur)
 		
 		//Cadrans secondaires (cercles extérieurs)
-		g.fillOval(this.getHeight() + 14, 0, (this.getHeight() - 42) / 3, (this.getHeight() - 42) / 3);
-		g.fillOval(this.getHeight() + 14, (int) Math.round((this.getHeight() - 42) / 3 + 21), (this.getHeight() - 42) / 3, (this.getHeight() - 42) / 3);
-		g.fillOval(this.getHeight() + 14, (int) Math.round(2 * ((this.getHeight() - 42) / 3) + 42), (this.getHeight() - 42) / 3, (this.getHeight() - 42) / 3);
+		g.fillOval(this.getHeight() + 14, 40, (this.getHeight() - 60) / 4, (this.getHeight() - 60) / 4);
+		g.fillOval(this.getHeight() + 14, (int) Math.round((this.getHeight() - 60) / 4 + 60), (this.getHeight() - 60) / 4, (this.getHeight() - 60) / 4);
+		g.fillOval(this.getHeight() + 14, (int) Math.round(2 * ((this.getHeight() - 42) / 4) + 80), (this.getHeight() - 60) / 4, (this.getHeight() - 60) / 4);
 		
 		//Lignes dans le cadran principal
 		g.setColor(new Color(240, 240, 240));
@@ -252,9 +252,9 @@ public class Cadran extends JPanel {
 		g.drawLine(this.getHeight() / 2, this.getHeight() / 2, this.getHeight(), (int) Math.round(this.getHeight() - (this.getHeight() / 2 * Math.tan(22.5))));
 		
 		//Cadrans secondaires (cercles intérieurs)
-		g.fillOval(this.getHeight() + 19, 5, (this.getHeight() - 42) / 3 - 10, (this.getHeight() - 42) / 3 - 10);
-		g.fillOval(this.getHeight() + 19, (int) Math.round((this.getHeight() - 42) / 3 + 26), (this.getHeight() - 42) / 3 - 10, (this.getHeight() - 42) / 3 - 10);
-		g.fillOval(this.getHeight() + 19, (int) Math.round(2 * ((this.getHeight() - 42) / 3) + 47), (this.getHeight() - 42) / 3 - 10, (this.getHeight() - 42) / 3 - 10);
+		g.fillOval(this.getHeight() + 19, 45, (this.getHeight() - 60) / 4 - 10, (this.getHeight() - 60) / 4 - 10);
+		g.fillOval(this.getHeight() + 19, (int) Math.round((this.getHeight() - 60) / 4 + 65), (this.getHeight() - 60) / 4 - 10, (this.getHeight() - 60) / 4 - 10);
+		g.fillOval(this.getHeight() + 19, (int) Math.round(2 * ((this.getHeight() - 60) / 4) + 93), (this.getHeight() - 60) / 4 - 10, (this.getHeight() - 60) / 4 - 10);
 
 		//Arc de valeur
 		g.setColor(couleur);
@@ -262,7 +262,7 @@ public class Cadran extends JPanel {
 		
 		//Cadran principal (cercle intérieur)
 		g.setColor(new Color(240, 240, 240));
-		g.fillOval(20, 20, 260, 260);
+		g.fillOval(50, 50, this.getHeight() - 100, this.getHeight() - 100);
 	}
 
 	/**
