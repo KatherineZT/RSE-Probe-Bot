@@ -22,5 +22,5 @@ Pour des questions concernant ce projet, prière de contacter [Katherine Zamudio
 11. Le robot fera une petite mélodie lorsque la connexion sera établie
 12. Sur votre téléphone, choisissez "Controller" et ensuite "Control Pad" et avec les flèches, mettez-vous à conduire le robot!
 
-Les flèches ↑↓ permettent de se déplacer vers l'avant ou vers l'arrière
+Les flèches ↑↓ permettent de se déplacer vers l'avant ou vers l'arrière\
 Les flèches ←→ permettent de pivoter de côté
