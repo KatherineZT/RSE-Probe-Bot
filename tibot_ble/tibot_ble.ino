@@ -13,7 +13,7 @@
 *********************************************************************/
 
 /*
- * Edited by Katherine Zamudio-Turcotte for Arduino Uno from DFRobotshop Rover kit
+ * Edited by Katherine Zamudio-Turcotte for Arduino Mega connected to Adafruit BLE Shield
  */
 
 #include <string.h>
@@ -22,34 +22,15 @@
 #include "pitches.h"
 #include "Adafruit_BLE.h"
 #include "Adafruit_BluefruitLE_SPI.h"
+//#include "Adafruit_BluefruitLE_UART.h"
 #include "BluefruitConfig.h"
 
 #if SOFTWARE_SERIAL_AVAILABLE
   #include <SoftwareSerial.h>
 #endif
 
-// DEVICES
-#define BUTTON_UP    5
-#define BUTTON_DOWN  6
-#define BUTTON_LEFT  7
-#define BUTTON_RIGHT 8
-
 // PINS
-#define pinSpeedR 5 // Right Speed Control
-#define pinSpeedL 6 // Left Speed Control
-#define pinDirR   7 // Right Direction Control
-#define pinDirL   8 // Left Direction Control
-#define pinBuzzer 2 // One of the only pins left for use
-
-// PRESETS
-#define HIGH_R 255
-#define HIGH_L 255
-
-// ROBOT STATE
-int speedR = 0;
-int dirR   = LOW;
-int speedL = 0;
-int dirL   = LOW;
+#define pinBuzzer 13 // can be changed to any digital pin except D7 and D8
 
 // STARTUP SONG
 int melody[] = {
@@ -104,7 +85,7 @@ Adafruit_BluefruitLE_UART ble(bluefruitSS, BLUEFRUIT_UART_MODE_PIN,
 */
 
 /* ...or hardware serial, which does not need the RTS/CTS pins. Uncomment this line */
-// Adafruit_BluefruitLE_UART ble(BLUEFRUIT_HWSERIAL_NAME, BLUEFRUIT_UART_MODE_PIN);
+//Adafruit_BluefruitLE_UART ble(BLUEFRUIT_HWSERIAL_NAME, BLUEFRUIT_UART_MODE_PIN);
 
 /* ...hardware SPI, using SCK/MOSI/MISO hardware SPI pins and then user selected CS/IRQ/RST */
 Adafruit_BluefruitLE_SPI ble(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
@@ -128,17 +109,6 @@ void printHex(const uint8_t * data, const uint32_t numBytes);
 
 // the packet buffer
 extern uint8_t packetbuffer[];
-
-void R2() {
-  int nbOfNotes = sizeof(melody) / sizeof(int);
-  for (int thisNote = 0; thisNote < nbOfNotes; thisNote++) {
-    int noteDuration = 1000 / noteDurations[thisNote];
-    tone(pinBuzzer, melody[thisNote], noteDuration);
-    int pauseBetweenNotes = noteDuration * 1.30;
-    delay(pauseBetweenNotes);
-    noTone(pinBuzzer);
-  }
-}
 
 
 /**************************************************************************/
@@ -207,6 +177,9 @@ void setup(void)
   // Set Bluefruit to DATA mode
   ble.setMode(BLUEFRUIT_MODE_DATA);
 
+  // Start serial connection with Uno (Robot)
+  Serial1.begin(115200);
+
   // SETUP DONE, DO R2 SOUND
   int nbOfNotes = sizeof(melody) / sizeof(int);
   for (int thisNote = 0; thisNote < nbOfNotes; thisNote++) {
@@ -217,109 +190,6 @@ void setup(void)
     noTone(pinBuzzer);
   }
   Serial.println(F("Done. You can start moving!"));
-}
-
-void startForward() {
-  if (dirR != LOW) {
-    analogWrite(pinSpeedR, 0);
-    speedR = 0;
-    digitalWrite(pinDirR, LOW);
-    dirR = LOW;
-  }
-  if (dirL != LOW) {
-    analogWrite(pinSpeedL, 0);
-    speedL = 0;
-    digitalWrite(pinDirL, LOW);
-    dirL = LOW;
-  }
-  if (speedR != HIGH_R) {
-    analogWrite(pinSpeedR, HIGH_R);
-    speedR = HIGH_R;
-  }
-  if (speedL != HIGH_L) {
-    analogWrite(pinSpeedL, HIGH_L);
-    speedL = HIGH_L;
-  }
-}
-
-void startBackward() {
-  if (dirR != HIGH) {
-    analogWrite(pinSpeedR, 0);
-    speedR = 0;
-    digitalWrite(pinDirR, HIGH);
-    dirR = HIGH;
-  }
-  if (dirL != HIGH) {
-    analogWrite(pinSpeedL, 0);
-    speedL = 0;
-    digitalWrite(pinDirL, HIGH);
-    dirL = HIGH;
-  }
-  if (speedR != HIGH_R) {
-    analogWrite(pinSpeedR, HIGH_R);
-    speedR = HIGH_R;
-  }
-  if (speedL != HIGH_L) {
-    analogWrite(pinSpeedL, HIGH_L);
-    speedL = HIGH_L;
-  }
-}
-
-void startLeft() {
-  if (dirR != LOW) {
-    analogWrite(pinSpeedR, 0);
-    speedR = 0;
-    digitalWrite(pinDirR, LOW);
-    dirR = LOW;
-  }
-  if (dirL != HIGH) {
-    analogWrite(pinSpeedL, 0);
-    speedL = 0;
-    digitalWrite(pinDirL, HIGH);
-    dirL = HIGH;
-  }
-  if (speedR != HIGH_R) {
-    analogWrite(pinSpeedR, HIGH_R);
-    speedR = HIGH_R;
-  }
-  if (speedL != HIGH_L) {
-    analogWrite(pinSpeedL, HIGH_L);
-    speedL = HIGH_L;
-  }
-}
-
-void startRight() {
-  if (dirR != HIGH) {
-    analogWrite(pinSpeedR, 0);
-    speedR = 0;
-    digitalWrite(pinDirR, HIGH);
-    dirR = HIGH;
-  }
-  if (dirL != LOW) {
-    analogWrite(pinSpeedL, 0);
-    speedL = 0;
-    digitalWrite(pinDirL, LOW);
-    dirL = LOW;
-  }
-  if (speedR != HIGH_R) {
-    analogWrite(pinSpeedR, HIGH_R);
-    speedR = HIGH_R;
-  }
-  if (speedL != HIGH_L) {
-    analogWrite(pinSpeedL, HIGH_L);
-    speedL = HIGH_L;
-  }
-}
-
-void stopRobot() {
-  if (speedR != 0) {
-    analogWrite(pinSpeedR, 0);
-    speedR = 0;
-  }
-  if (speedL != 0) {
-    analogWrite(pinSpeedL, 0);
-    speedL = 0;
-  }
 }
 
 /**************************************************************************/
@@ -343,16 +213,10 @@ void loop(void)
     Serial.print ("Button "); Serial.print(buttnum);
     if (pressed) {
       Serial.println(" pressed");
-      switch(buttnum) {
-        case BUTTON_UP: startForward(); break;
-        case BUTTON_DOWN: startBackward(); break;
-        case BUTTON_LEFT: startLeft(); break;
-        case BUTTON_RIGHT: startRight(); break;
-        default: break;
-      }
+      Serial1.write(buttnum);  // send command to robot
     } else {
       Serial.println(" released");
-      stopRobot();
+      Serial1.write(0);  // send command to robot
     }
   }
 

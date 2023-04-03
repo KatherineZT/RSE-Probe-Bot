@@ -23,9 +23,9 @@
 // The following macros declare the HW serial port you are using. Uncomment
 // this line if you are connecting the BLE to Leonardo/Micro or Flora
 // ----------------------------------------------------------------------------------------------
-#ifdef Serial1    // this makes it not complain on compilation if there's no Serial1
-  #define BLUEFRUIT_HWSERIAL_NAME      Serial1
-#endif
+//#ifdef Serial1    // this makes it not complain on compilation if there's no Serial1
+//  #define BLUEFRUIT_HWSERIAL_NAME      Serial1
+//#endif
 
 
 // SHARED UART SETTINGS
@@ -42,8 +42,8 @@
 // using HW SPI.  This should be used with nRF51822 based Bluefruit LE modules
 // that use SPI (Bluefruit LE SPI Friend).
 // ----------------------------------------------------------------------------------------------
-#define BLUEFRUIT_SPI_CS               8    // DO NOT CHANGE
-#define BLUEFRUIT_SPI_IRQ              7    // DO NOT CHANGE
+#define BLUEFRUIT_SPI_CS               8     // FOR THIS MODEL (BLESPIFRIEND), CANNOT BE CHANGED
+#define BLUEFRUIT_SPI_IRQ              7     // FOR THIS MODEL (BLESPIFRIEND), CANNOT BE CHANGED
 #define BLUEFRUIT_SPI_RST              4    // Optional but recommended, set to -1 if unused
 
 // SOFTWARE SPI SETTINGS
