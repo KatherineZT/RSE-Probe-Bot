@@ -21,6 +21,7 @@ Pour des questions concernant ce projet, prière de contacter [Katherine Zamudio
 Les flèches ←→ permettent de pivoter de côté**
 
 ## Pour reprogrammer le robot
+**IMPORTANT: DÉBRANCHEZ LA BATTERIE LIPO ET ÉTEIGNEZ L'ARDUINO UNO AVEC L'INTERRUPTEUR À L'ARRIÈRE!**
 1. S'assurer d'avoir téléchargé Arduino IDE sur votre PC
 2. Sur votre PC, naviguez vers https://github.com/KatherineZT/RSE-Probe-Bot/tree/ble-control, cliquez sur le bouton vert "Code" et choisissez "Download ZIP"
 3. Une fois l'archive ZIP extraite, double-cliquez sur le fichier `.ino` qui se trouvera dans `RSE-Probe-Bot\tibot_drive_serial`
@@ -32,3 +33,4 @@ Les flèches ←→ permettent de pivoter de côté**
 8. Sur Arduino IDE, allez dans "Tools" et vérifiez que le "Board" sélectionné est un Arduino Mega, que le processeur sélectionné est bien "ATmega2560" et qu'il y a un "Port" sélectionné
 9. Branchez le Arduino Mega à votre PC avec un câble USB-B
 10. Faites Ctrl-U pour téléverser le code dans le Arduino Mega
+11. Débranchez tous les câbles USB et rebranchez la batterie LiPo au Arduino Mega, puis rallumez l'interrupteur du Arduino Uno
